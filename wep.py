@@ -77,12 +77,6 @@ elif page == 2:
             st.write("✅ ميكي")
             st.write("✅ قريني")
 
-    with col2:
-        with st.expander("🎶 الترانيم"):
-            st.write("🎵 ترنيمة 1")
-            st.write("🎵 ترنيمة 2")
-            st.write("🎵 ترنيمة 3")
-
     with col3:
         with st.expander("📋 الافتقاد"):
             st.markdown(
