@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-import base64
+
 
 # ====== Telegram Bot ======
 BOT_TOKEN = "7517001841:AAFZZQM1hiprXxhPhK4GMfFwu-eP-DkOdMU"
@@ -11,32 +11,23 @@ def send_to_telegram(message):
     data = {"chat_id": CHAT_ID, "text": message}
     requests.post(url, data=data)
 
-# ====== إعداد الخلفية ======
-def img_to_base64(img_path):
-    with open(img_path, "rb") as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-bg_img = img_to_base64("mgma8.png")  # غيّر اسم الصورة حسب اللي عندك
 
 st.set_page_config(page_title="كنيسة الشهيدة دميانة", layout="wide")
 
 st.markdown(
-    f"""
+    """
     <style>
-    [data-testid="stAppViewContainer"] {{
-        background: url("data:image/png;base64,{bg_img}");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-    }}
-    [data-testid="stHeader"], [data-testid="stSidebar"] {{
+    [data-testid="stAppViewContainer"] {
+        background-color: #FDE3C6;
+    }
+    [data-testid="stHeader"], [data-testid="stSidebar"] {
         background: rgba(0,0,0,0);
-    }}
+    }
     </style>
     """,
     unsafe_allow_html=True
 )
+
 
 # ====== Session ======
 query_params = st.query_params
@@ -81,7 +72,7 @@ elif page == 2:
         with st.expander("📋 الافتقاد"):
             st.markdown(
                 f"""
-                <div style='text-align: center; position:relative; top:-10px; margin-left:-330px;'>
+                <div style='text-align: center; position:relative; top:-10px; margin-left:-290px;'>
                     <a href="?page=3" target="_self">
                         <button style='font-size:20px; padding:10px 25px; background-color:none; color:black; border:none; border-radius:8px; cursor:pointer;'>
                             ميخائيل
