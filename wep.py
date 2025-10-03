@@ -1,3 +1,4 @@
+# صندوق ملاحظات
 import streamlit as st
 import requests
 
@@ -84,17 +85,21 @@ elif page == 2:
             )
 
 # ====== صفحة الشخص ======
+# ====== صفحة الشخص ======
 elif page == 3:
     person = "ميخائيل"
-
     st.markdown("<h1 style='text-align: center;'>افتقاد - ميخائيل</h1>", unsafe_allow_html=True)
 
-    # checkboxes في النص
+    # checkboxes + textbox في النص
     col1, col2, col3 = st.columns(3)
     with col2:
         nermine = st.checkbox("نرمين")
         irene = st.checkbox("إيريني")
+        
+        # صندوق ملاحظات
+        notes = st.text_area("📝 ملاحظات إضافية", "")
 
+        # زرار Submit
         if st.button("Submit"):
             if nermine and irene:
                 msg = f"{person}\nتم اختيار في الافتقاد: نرمين و إيريني"
@@ -104,6 +109,10 @@ elif page == 3:
                 msg = f"{person}\nتم اختيار في الافتقاد: إيريني فقط"
             else:
                 msg = f"{person}\nلم يتم اختيار أي شخص في الافتقاد"
+
+            # إضافة الملاحظات لو اتكتبت
+            if notes.strip():
+                msg += f"\n📝 ملاحظات: {notes}"
 
             send_to_telegram(msg)
             st.success("✅ تم إرسال الرسالة على التلجرام")
