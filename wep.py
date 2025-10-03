@@ -12,7 +12,7 @@ def send_to_telegram(message):
     requests.post(url, data=data)
 
 
-st.set_page_config(page_title="كنيسة الشهيدة دميانة", layout="wide")
+st.set_page_config(page_title="كنيسة الشهيدة دميانة",  page_icon="✝️",layout="wide")
 
 st.markdown(
     """
