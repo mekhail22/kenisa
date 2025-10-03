@@ -1,7 +1,6 @@
-# صندوق ملاحظات
+
 import streamlit as st
 import requests
-
 
 # ====== Telegram Bot ======
 BOT_TOKEN = "7517001841:AAFZZQM1hiprXxhPhK4GMfFwu-eP-DkOdMU"
@@ -12,34 +11,57 @@ def send_to_telegram(message):
     data = {"chat_id": CHAT_ID, "text": message}
     requests.post(url, data=data)
 
+# ====== إعداد الصفحة ======
+st.set_page_config(page_title="كنيسة الشهيدة دميانة", page_icon="✝️", layout="wide")
 
-st.set_page_config(page_title="كنيسة الشهيدة دميانة",  page_icon="✝️",layout="wide")
-
+# ====== CSS للألوان والخلفية ======
 st.markdown(
     """
     <style>
     [data-testid="stAppViewContainer"] {
-        background-color: #FDE3C6;
+        background-color: #FFF8F0; /* خلفية هادية */
     }
     [data-testid="stHeader"], [data-testid="stSidebar"] {
         background: rgba(0,0,0,0);
+    }
+    h1 {
+        color: #2E4053; /* لون العنوان */
+    }
+    .stButton button {
+        background-color: #28A745; /* أخضر */
+        color: white;
+        font-size: 20px;
+        border-radius: 10px;
+        padding: 10px 25px;
+        border: none;
+    }
+    .stButton button:hover {
+        background-color: #218838; /* أغمق عند الهوفر */
+        color: #fff;
+    }
+    .stCheckbox label {
+        color: #1A5276; /* لون نص الشيكبوكس */
+        font-size: 18px;
+    }
+    .stTextArea textarea {
+        background-color: #FDEBD0; /* لون صندوق الملاحظات */
+        border-radius: 10px;
+        font-size: 16px;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-
 # ====== Session ======
 query_params = st.query_params
 if "page" not in query_params:
     query_params["page"] = "1"
 
-# تأمين القيمة علشان لو مش رقم
+# تأمين القيمة
 page_str = query_params["page"]
 if not page_str.isdigit():
     page_str = "1"
-
 page = int(page_str)
 
 # ====== الصفحة الرئيسية ======
@@ -50,7 +72,7 @@ if page == 1:
         f"""
         <div style='text-align: center; position:relative; top:240px;'>
             <a href="?page=2" target="_self">
-                <button style='font-size:25px; padding:10px 40px; background-color:#4CAF50; color:black; border:none; border-radius:8px; cursor:pointer;'>
+                <button style='font-size:25px; padding:10px 40px; background-color:#28A745; color:white; border:none; border-radius:12px; cursor:pointer;'>
                     التالي
                 </button>
             </a>
@@ -75,7 +97,7 @@ elif page == 2:
                 f"""
                 <div style='text-align: center; position:relative; top:-10px; margin-left:-290px;'>
                     <a href="?page=3" target="_self">
-                        <button style='font-size:20px; padding:10px 25px; background-color:none; color:black; border:none; border-radius:8px; cursor:pointer;'>
+                        <button style='font-size:20px; padding:10px 25px; background-color:#D3D3D3; color:black; border:none; border-radius:8px; cursor:pointer;'>
                             ميخائيل
                         </button>
                     </a>
@@ -84,7 +106,6 @@ elif page == 2:
                 unsafe_allow_html=True
             )
 
-# ====== صفحة الشخص ======
 # ====== صفحة الشخص ======
 elif page == 3:
     person = "ميخائيل"
