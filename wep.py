@@ -30,7 +30,7 @@ st.markdown(
         font-size:20px;
         padding:10px 25px;
         background-color:#28A745;
-        color:white;
+        color:#FFFFFF;
         border:none;
         border-radius:10px;
         cursor:pointer;
@@ -43,7 +43,7 @@ st.markdown(
         font-size:20px;
         padding:10px 25px;
         background-color:#D3D3D3;
-        color:black;
+        color:#000000;
         border:none;
         border-radius:10px;
         cursor:pointer;
