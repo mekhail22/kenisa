@@ -93,7 +93,7 @@ elif page == 2:
     with col1:
         st.markdown(
                 f"""
-                <div style='text-align: center; position:relative; top:600px; margin-left:-300px;'>
+                <div style='text-align: center; position:relative; top:500px; margin-left:-300px;'>
                     <a href="?page=1" target="_self">
                         <button style='font-size:20px; padding:10px 25px; background-color:#FF0000; color:black; border:none; border-radius:8px; cursor:pointer;'>
                             رجوع
