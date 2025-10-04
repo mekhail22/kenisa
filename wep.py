@@ -91,7 +91,12 @@ elif page == 2:
     
 
     with col1:
-        st.markdown(
+        
+        with st.expander("📌 الغياب"):
+            st.write("✅ ميخائيل")
+            st.write("✅ ميكي")
+            st.write("✅ قريني")
+            st.markdown(
                 f"""
                 <div style='text-align: center; position:relative; top:200px; margin-left:-300px;'>
                     <a href="?page=1" target="_self">
@@ -103,10 +108,6 @@ elif page == 2:
                 """,
                 unsafe_allow_html=True
             )
-        with st.expander("📌 الغياب"):
-            st.write("✅ ميخائيل")
-            st.write("✅ ميكي")
-            st.write("✅ قريني")
 
     with col3:
         with st.expander("📋 الافتقاد"):
