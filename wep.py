@@ -64,6 +64,7 @@ if not page_str.isdigit():
     page_str = "1"
 page = int(page_str)
 
+
 # ====== الصفحة الرئيسية ======
 if page == 1:
     st.markdown("<h1 style='text-align: center;'>كنيسة الشهيدة دميانة</h1>", unsafe_allow_html=True)
@@ -81,11 +82,27 @@ if page == 1:
         unsafe_allow_html=True
     )
 
+
+
 # ====== صفحة القائمة ======
 elif page == 2:
     col1, col2, col3 = st.columns(3)
 
+    
+
     with col1:
+        st.markdown(
+                f"""
+                <div style='text-align: center; position:relative; top:550px; margin-left:-400px;'>
+                    <a href="?page=1" target="_self">
+                        <button style='font-size:20px; padding:10px 25px; background-color:#FF0000; color:black; border:none; border-radius:8px; cursor:pointer;'>
+                            رجوع
+                        </button>
+                    </a>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
         with st.expander("📌 الغياب"):
             st.write("✅ ميخائيل")
             st.write("✅ ميكي")
@@ -95,7 +112,7 @@ elif page == 2:
         with st.expander("📋 الافتقاد"):
             st.markdown(
                 f"""
-                <div style='text-align: center; position:relative; top:-10px; margin-left:-290px;'>
+                <div style='text-align: center; position:relative; top:-10px; margin-left:-250px;'>
                     <a href="?page=3" target="_self">
                         <button style='font-size:20px; padding:10px 25px; background-color:#D3D3D3; color:black; border:none; border-radius:8px; cursor:pointer;'>
                             ميخائيل
@@ -105,6 +122,7 @@ elif page == 2:
                 """,
                 unsafe_allow_html=True
             )
+
 
 # ====== صفحة الشخص ======
 elif page == 3:
