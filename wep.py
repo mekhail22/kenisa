@@ -91,14 +91,9 @@ elif page == 2:
     
 
     with col1:
-        
-        with st.expander("📌 الغياب"):
-            st.write("✅ ميخائيل")
-            st.write("✅ ميكي")
-            st.write("✅ قريني")
-            st.markdown(
+        st.markdown(
                 f"""
-                <div style='text-align: center; position:relative; top:200px; margin-left:-300px;'>
+                <div style='text-align: center; position:relative; top:300px; margin-left:-200px;'>
                     <a href="?page=1" target="_self">
                         <button style='font-size:20px; padding:10px 25px; background-color:#FF0000; color:black; border:none; border-radius:8px; cursor:pointer;'>
                             رجوع
@@ -108,6 +103,11 @@ elif page == 2:
                 """,
                 unsafe_allow_html=True
             )
+        with st.expander("📌 الغياب"):
+            st.write("✅ ميخائيل")
+            st.write("✅ ميكي")
+            st.write("✅ قريني")
+            
 
     with col3:
         with st.expander("📋 الافتقاد"):
