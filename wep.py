@@ -84,6 +84,20 @@ if page == 1:
 elif page == 2:
     col1, col2, col3 = st.columns(3)
 
+
+    st.markdown(
+                f"""
+                <div style='text-align: left; position:relative; top:10px; margin-left:0;'>
+                    <a href="?page=1" target="_self">
+                        <button style='font-size:20px; padding:10px 25px; background-color:#FF0000; color:black; border:none; border-radius:8px; cursor:pointer;'>
+                            رجوع
+                        </button>
+                    </a>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
     with col1:
         with st.expander("📌 الغياب"):
             st.write("✅ ميخائيل")
@@ -94,7 +108,7 @@ elif page == 2:
         with st.expander("📋 الافتقاد"):
             st.markdown(
                 f"""
-                <div style='text-align: center; position:relative; top:-10px; margin-left:-290px;'>
+                <div style='text-align: center; position:relative; top:-10px; margin-left:-250px;'>
                     <a href="?page=3" target="_self">
                         <button style='font-size:20px; padding:10px 25px; background-color:#D3D3D3; color:black; border:none; border-radius:8px; cursor:pointer;'>
                             ميخائيل
@@ -106,7 +120,7 @@ elif page == 2:
             )
 
 # ====== صفحة الشخص ======
-# ====== صفحة الشخص ======
+
 elif page == 3:
     person = "ميخائيل"
     st.markdown("<h1 style='text-align: center;'>افتقاد - ميخائيل</h1>", unsafe_allow_html=True)
@@ -140,7 +154,7 @@ elif page == 3:
             st.markdown(
                 """
                 <a href="?page=2" target="_self">
-                    <button style='font-size: 20px;padding: 7px 25px; background-color:#FF0000; color:white; border:none; border-radius: 10px; cursor:pointer;'>
+                    <button style='font-size: 20px;padding: 10px 25px; background-color:#FF0000; color:white; border:none; border-radius: 10px; cursor:pointer;'>
                         رجوع
                     </button>
                 </a>
