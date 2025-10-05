@@ -29,7 +29,6 @@ st.markdown(
     }
     .stButton button {
         background-color: #32CD32; 
-        color: white;
         font-size: 20px;
         border-radius: 10px;
         padding: 10px 25px;
@@ -71,7 +70,7 @@ if page == 1:
         f"""
         <div style='text-align: center; position:relative; top:240px;'>
             <a href="?page=2" target="_self">
-                <button style='font-size:25px; padding:10px 40px; background-color:#32CD32; color:white; border:none; border-radius:12px; cursor:pointer;'>
+                <button style='font-size:25px; padding:10px 40px; background-color:#32CD32;color:black; border:none; border-radius:12px; cursor:pointer;'>
                     التالي
                 </button>
             </a>
@@ -134,7 +133,7 @@ elif page == 3:
         # الأزرار جنب بعض
         col_btn1, col_btn2 = st.columns([1,1])
         with col_btn1:
-            if st.button("Submit", type="primary"):
+            if st.button("Submit"):
                 if nermine and irene:
                     msg = f"{person}\nتم اختيار في الافتقاد: نرمين و إيريني"
                 elif nermine and not irene:
@@ -154,7 +153,7 @@ elif page == 3:
             st.markdown(
                 """
                 <a href="?page=2" target="_self">
-                    <button style='font-size: 20px;padding: 10px 25px; background-color:#FF0000; color:white; border:none; border-radius: 10px; cursor:pointer;'>
+                    <button style='font-size: 20px;padding: 10px 25px; background-color:#FF0000; color:black; border:none; border-radius: 10px; cursor:pointer;'>
                         رجوع
                     </button>
                 </a>
